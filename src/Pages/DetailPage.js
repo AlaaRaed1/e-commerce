@@ -1,8 +1,8 @@
 import React from "react";
-import image from "../images/image-product.jpg";
-import cart from "../images/icon-cart.svg";
-import plus from "../images/icon-plus.svg";
-import minus from "../images/icon-minus.svg";
+import image from "../images/imageProduct.jpg";
+import cart from "../images/iconCart.svg";
+import plus from "../images/iconPlus.svg";
+import minus from "../images/iconMinus.svg";
 export default function Home() {
   let count = 1;
   let price = 125.0;
