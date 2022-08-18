@@ -1,17 +1,12 @@
-import React, { useState } from "react";
-import image from "../Images/image-product-1.jpg";
-import cart from "../Images/icon-cart.svg";
-import plus from "../Images/icon-plus.svg";
-import minus from "../Images/icon-minus.svg";
+import React from "react";
+import image from "../images/image-product-1.jpg";
+import cart from "../images/icon-cart.svg";
+import plus from "../images/icon-plus.svg";
+import minus from "../images/icon-minus.svg";
 export default function Home() {
-  const [count, setCount] = useState(1);
-  const [price, setPrice] = useState(125.0);
-  function increaseCount() {
-    setCount((prevCount) => (prevCount += 1));
-  }
-  function decreaseCount() {
-    setCount((prevCount) => (prevCount === 0 ? 0 : prevCount - 1));
-  }
+  let count = 1;
+  let price = 125.0;
+
   return (
     <>
       <div className="product-container">
@@ -28,18 +23,32 @@ export default function Home() {
           </p>
           <div className="price-discount-div">
             <div className="price">
-              ${price * count + ".00"}
+              ${price}
               <div className="discount">50%</div>
             </div>
             <p className="before-discount">{`$${250 * count + ".00"}`}</p>
           </div>
           <div className="cart-quantity-container">
             <div className="add-minus">
-              <div className="minus" onClick={decreaseCount}>
+              <div
+                className="minus"
+                onClick={() => {
+                  if (count < 0) {
+                    count = 0;
+                  } else {
+                    count -= 1;
+                  }
+                }}
+              >
                 <img src={minus} alt="minus" className="minus-icon" />
               </div>
               <p className="product-quantity">{count}</p>
-              <div className=" add" onClick={increaseCount}>
+              <div
+                className=" add"
+                onClick={() => {
+                  count += 1;
+                }}
+              >
                 <img src={plus} className="add-icon" alt="add" />
               </div>
             </div>

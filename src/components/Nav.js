@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import emptyCart from "../Images/icon-cart-nav.svg";
-import avatar from "../Images/image-avatar.png";
+import emptyCart from "../images/icon-cart-nav.svg";
+import avatar from "../images/image-avatar.png";
 export default function Nav() {
   const linkStyle = {
     textDecoration: "none",

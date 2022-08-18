@@ -4,7 +4,7 @@ export default function Collection() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://api.escuelajs.co/api/v1/products")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -22,10 +22,6 @@ export default function Collection() {
           className="row row-cols-1 row-cols-lg-4 row-cols-md-2 g-4 cards-container"
           style={{ flexWrap: "wrap" }}
         >
-          {elements}
-          {elements}
-          {elements}
-          {elements}
           {elements}
         </div>
       </div>

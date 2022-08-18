@@ -1,24 +1,22 @@
 import React from "react";
-
-export default function MenClothing(props) {
+export default function Product(props) {
   const { item } = props;
+
   return (
     <div className="col">
-      <div className="card" style={{ maxWidth: "70%", maxHeight: "70%" }}>
-        <img
-          className="card-img-top"
-          src={item.image}
-          alt="Card"
-          style={{
-            height: "20%",
-            objectFit: "contain",
-            borderBottom: "1px solid rgba(0, 0, 0, .1)",
-            paddingBottom: ".5em",
-          }}
-        />
-        <div className="card-body men-container">
-          <h4 className="card-title">{item.title}</h4>
-          <p className="card-text men-description">{item.description}</p>
+      <div
+        className="card shadow-sm p-0 mb-5 bg-white rounded"
+        id="card-container"
+      >
+        <img className="card-img-top" src={item.image} alt="" id="card-img" />
+        <div className="card-body">
+          <h6 className="card-title">{item.title}</h6>
+          <p className="card-description">{item.description}</p>
+          <p className="product-price">
+            <span className="price-simple">$</span>
+            {item.price}
+          </p>
+          <button className="btn btn-primary">Add to cart</button>
         </div>
       </div>
     </div>
