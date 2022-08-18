@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
-import { Link } from "react-router-dom";
 export default function Main() {
   const [info, setInfo] = useState([]);
   const [form, setForm] = useState({

@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../images/img_avatar1.png";
+
 export default function Product(props) {
   const { item } = props;
 
