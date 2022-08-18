@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import emptyCart from "../images/icon-cart-nav.svg";
+import emptyCart from "../images/iconCartNav.svg";
 import avatar from "../images/image-avatar.png";
 export default function Nav() {
   const linkStyle = {

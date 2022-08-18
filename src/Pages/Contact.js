@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../images/img_avatar1.png";
+import avatar from "../images/imgAvatar.png";
 export default function Contact() {
   return (
     <div>
