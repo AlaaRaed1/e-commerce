@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../images/image-product-1.jpg";
+import image from "../images/image-product-2.jpg";
 import cart from "../images/icon-cart.svg";
 import plus from "../images/icon-plus.svg";
 import minus from "../images/icon-minus.svg";
