@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import WomenClothing from "../components/WomenClothing";
-import Product from "../components/Product";
 export default function Men() {
   const [data, setData] = useState([]);
 

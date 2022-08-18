@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MenClothing from "../components/MenClothing";
-import Product from "../components/Product";
+
 export default function Men() {
   const [data, setData] = useState([]);
 
