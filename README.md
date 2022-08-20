@@ -1,3 +1,3 @@
 # e-commerce
  
-##served by netlify
+## served by netlify
