@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import image from "../images/imageProduct.jpg";
 import cart from "../images/iconCart.svg";
 import plus from "../images/iconPlus.svg";
 import minus from "../images/iconMinus.svg";
 export default function Home() {
-  let count = 1;
-  let price = 125.0;
+  const [count, setCount] = useState(1);
+  const [price] = useState(125.0);
   return (
     <>
       <div className="product-container">
@@ -22,7 +22,7 @@ export default function Home() {
           </p>
           <div className="price-discount-div">
             <div className="price">
-              ${price}
+              ${price * count}
               <div className="discount">50%</div>
             </div>
             <p className="before-discount">{`$${250 * count + ".00"}`}</p>
@@ -32,10 +32,10 @@ export default function Home() {
               <div
                 className="minus"
                 onClick={() => {
-                  if (count < 0) {
-                    count = 0;
+                  if (count <= 0) {
+                    setCount(0);
                   } else {
-                    count -= 1;
+                    setCount((prevCount) => (prevCount -= 1));
                   }
                 }}
               >
@@ -45,7 +45,7 @@ export default function Home() {
               <div
                 className=" add"
                 onClick={() => {
-                  count += 1;
+                  setCount((prevCount) => (prevCount += 1));
                 }}
               >
                 <img src={plus} className="add-icon" alt="add" />
