@@ -6,7 +6,6 @@ import minus from "../images/iconMinus.svg";
 export default function Home() {
   let count = 1;
   let price = 125.0;
-
   return (
     <>
       <div className="product-container">
@@ -17,7 +16,7 @@ export default function Home() {
             <h2 className="product-title">Fall limited Edition Sneakers</h2>
           </div>
           <p className="product-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel,
+            lora ipsum dolor sit amet, consectetur adipisicing elit. Vel,
             beatae!Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Tenetur voluptatibus commodi, est eveniet amet
           </p>
