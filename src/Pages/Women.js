@@ -9,7 +9,7 @@ export default function Men() {
       .then((data) => {
         setData(data);
       });
-  }, [data]);
+  }, []);
 
   const products = data.map((item, index) => {
     return <WomenClothing item={item} key={index} />;

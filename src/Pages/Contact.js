@@ -15,32 +15,32 @@ export default function Contact() {
         <p>Please fill your info and send us what is on your mind.</p>
         <form className="form">
           <div>
-            <label forHtml="name">Name: </label>
+            <label forhtml="name">Name: </label>
             <input
               type="name"
               placeholder="Your name"
               name="name"
-              class="form-control form-control-sm"
+              className="form-control form-control-sm"
             />
           </div>
           <div>
-            <label forHtml="email">Email: </label>
+            <label forhtml="email">Email: </label>
             <input
               type="email"
               placeholder="@example.com"
               name="email"
-              class="form-control form-control-sm"
+              className="form-control form-control-sm"
             />
           </div>
           <div>
-            <label forHtml="message">Message:</label>
+            <label forhtml="message">Message:</label>
             <textarea
               placeholder="message"
               name="message"
-              class="form-control form-control-sm"
+              className="form-control form-control-sm"
             />
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>
