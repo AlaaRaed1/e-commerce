@@ -4,7 +4,7 @@ import Context from "../Context/Context";
 
 function Main() {
   const [mainContent, setMainContent] = useState([]);
-  const [form, setForm] = useState("2");
+  const [form, setForm] = useState("4");
 
   const { addToCart, getDetailPageProductData } = useContext(Context);
 

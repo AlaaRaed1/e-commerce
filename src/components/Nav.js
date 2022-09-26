@@ -13,8 +13,9 @@ import emptyCart from "../images/iconCartNav.svg";
 import avatar from "../images/profileAvatar.png";
 import Context from "../Context/Context";
 export default function Navigation() {
-  const { show, handleShow, handleClose } = useContext(Context);
+  const { show, handleShow, handleClose, total } = useContext(Context);
   const [windowSize, setWindowSize] = useState(getWindowSize());
+
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
@@ -31,6 +32,7 @@ export default function Navigation() {
     const { innerWidth } = window;
     return innerWidth;
   }
+
   return (
     <>
       {windowSize > 720 ? (
@@ -58,8 +60,11 @@ export default function Navigation() {
             </Nav>
           </Container>
           <Container className="d-flex justify-content-end w-25 gap-4">
-            <Link to="/cart">
-              <img src={emptyCart} alt="cart" className="cart" />
+            <Link to="/cart" className=" text-decoration-none">
+              <div className=" d-flex ">
+                <img src={emptyCart} alt="cart" className="cart" />
+                <div className="itemsInCartQount">{total}</div>
+              </div>
             </Link>
 
             <img src={avatar} alt="profile" className="avatar" />
@@ -80,8 +85,11 @@ export default function Navigation() {
                 </Navbar.Brand>
               </div>
               <div className="mobile-cart-avatar-container">
-                <Link to="/cart">
-                  <img src={emptyCart} alt="" />
+                <Link to="/cart" className=" text-decoration-none">
+                  <div className=" d-flex ">
+                    <img src={emptyCart} alt="cart" className="cart" />
+                    <div className="itemsInCartQount">{total}</div>
+                  </div>
                 </Link>
 
                 <img src={avatar} alt="" className="avatar-mobile" />
