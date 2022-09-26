@@ -1,30 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Product from "../components/Product";
+
+import Context from "../Context/Context";
 export default function Collection() {
-  const [data, setData] = useState([]);
+  const [collectionsContent, setcollectionsContent] = useState([]);
+  const context = useContext(Context);
+  const { addToCart, getDetailPageProductData } = context;
 
   useEffect(() => {
     fetch("https://api.escuelajs.co/api/v1/products")
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
-      });
+        setcollectionsContent(data);
+        if (!localStorage.getItem("cart")) {
+          localStorage.setItem("cart", "[]");
+        }
+      })
+      .catch((err) => console.log(err));
   }, []);
 
-  const elements = data.map((item, index) => {
-    return <Product item={item} key={index} />;
+  const CollectionsProducts = collectionsContent.map((item, index) => {
+    return (
+      <Product
+        item={item}
+        key={index}
+        addToCart={addToCart}
+        getDetailPageProductData={getDetailPageProductData}
+      />
+    );
   });
 
   return (
-    <div>
-      <div className="container p-0 mt-5 mb-5 ">
-        <div
-          className="row row-cols-1 row-cols-lg-4 row-cols-md-2 g-4 cards-container"
-          style={{ flexWrap: "wrap" }}
-        >
-          {elements}
-        </div>
-      </div>
+    <div
+      className="container p-4 mt-5 justify-content-evenly"
+      style={{ width: "90%" }}
+    >
+      <div className="d-flex flex-wrap">{CollectionsProducts}</div>
     </div>
   );
 }

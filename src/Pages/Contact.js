@@ -13,9 +13,9 @@ export default function Contact() {
           style={{ height: "12em", objectFit: "cover" }}
         />
         <p>Please fill your info and send us what is on your mind.</p>
-        <form className="form">
+        <form className="form d-flex flex-column gap-2">
           <div>
-            <label forhtml="name">Name: </label>
+            <label forHtml="name">Name: </label>
             <input
               type="name"
               placeholder="Your name"
@@ -24,7 +24,7 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label forhtml="email">Email: </label>
+            <label forHtml="email">Email: </label>
             <input
               type="email"
               placeholder="@example.com"
@@ -33,7 +33,7 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label forhtml="message">Message:</label>
+            <label forHtml="message">Message:</label>
             <textarea
               placeholder="message"
               name="message"

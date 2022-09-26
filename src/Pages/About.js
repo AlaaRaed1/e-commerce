@@ -2,53 +2,105 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="about-container">
+    <div className="d-flex w-75 mx-auto mt-5 mb-0 justify-content-center">
       <div className="left-side-bar">
-        <div className="side-bar-inner" id="top-left">
-          links to a page
-        </div>
-        <div className="left-side-bar-inner">
-          <a href="@" className="link">
+        <div className="py-2 ">links to a page</div>
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className=" text-decoration-none ">
             links to a page
           </a>
         </div>
-        <div className="left-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className=" text-decoration-none ">
             links to a page
           </a>
         </div>
-        <div className="left-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className=" text-decoration-none ">
             links to a page
           </a>
         </div>
-        <div className="left-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className=" text-decoration-none ">
             links to a page
           </a>
         </div>
-        <div className="left-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className=" text-decoration-none ">
             links to a page
           </a>
         </div>
-        <div className="left-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className=" text-decoration-none ">
             links to a page
           </a>
         </div>
-        <div className="left-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className=" text-decoration-none ">
             links to a page
           </a>
         </div>
-        <div className="left-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className=" text-decoration-none ">
             links to a page
           </a>
         </div>
-        <div className="left-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className=" text-decoration-none ">
             links to a page
           </a>
         </div>
@@ -59,7 +111,7 @@ export default function About() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab modi autem
           quia fugit asperiores accusantium. Cum,
           <bold>
-            <a href="@" className="about-links">
+            <a href="/" className="about-links">
               beatae
             </a>
           </bold>
@@ -71,7 +123,7 @@ export default function About() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab modi autem
           quia fugit asperiores accusantium. Cum,
           <bold>
-            <a href="@" className="about-links">
+            <a href="/" className="about-links">
               beatae
             </a>
           </bold>
@@ -83,7 +135,7 @@ export default function About() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab modi autem
           quia fugit asperiores accusantium. Cum,
           <bold>
-            <a href="@" className="about-links">
+            <a href="/" className="about-links">
               beatae
             </a>
           </bold>
@@ -95,7 +147,7 @@ export default function About() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab modi autem
           quia fugit asperiores accusantium. Cum,
           <bold>
-            <a href="@" className="about-links">
+            <a href="/" className="about-links">
               beatae
             </a>
           </bold>
@@ -105,51 +157,103 @@ export default function About() {
       </div>
 
       <div className="right-side-bar">
-        <div className="right-side-bar-inner" id="top-right">
-          links to a page
-        </div>
-        <div className="right-side-bar-inner">
-          <a href="@" className="link">
+        <div className="py-2 ">links to a page</div>
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className="text-decoration-none">
             links to a page
           </a>
         </div>
-        <div className="right-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className="text-decoration-none">
             links to a page
           </a>
         </div>
-        <div className="right-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className="text-decoration-none">
             links to a page
           </a>
         </div>
-        <div className="right-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className="text-decoration-none">
             links to a page
           </a>
         </div>
-        <div className="right-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className="text-decoration-none">
             links to a page
           </a>
         </div>
-        <div className="right-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className="text-decoration-none">
             links to a page
           </a>
         </div>
-        <div className="right-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className="text-decoration-none">
             links to a page
           </a>
         </div>
-        <div className="right-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className="text-decoration-none">
             links to a page
           </a>
         </div>
-        <div className="right-side-bar-inner">
-          <a href="@" className="link">
+        <div
+          className="py-2"
+          style={{
+            borderTop: "2px solid rgba(0, 0, 0, .6)",
+            width: "fit-content",
+          }}
+        >
+          <a href="/" className="text-decoration-none">
             links to a page
           </a>
         </div>

@@ -1,31 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import WomenClothing from "../components/WomenClothing";
-export default function Men() {
-  const [data, setData] = useState([]);
+
+import Context from "../Context/Context";
+export default function Women() {
+  const [womenContent, setWomenContent] = useState([]);
+
+  const { addToCart, getDetailPageProductData } = useContext(Context);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/women's clothing`)
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
-      });
+        setWomenContent(data);
+        if (!localStorage.getItem("cart")) {
+          localStorage.setItem("cart", "[]");
+        }
+      })
+      .catch((err) => console.log(err));
   }, []);
 
-  const products = data.map((item, index) => {
-    return <WomenClothing item={item} key={index} />;
+  const womenProducts = womenContent.map((item, index) => {
+    return (
+      <WomenClothing
+        item={item}
+        key={index}
+        addToCart={addToCart}
+        getDetailPageProductData={getDetailPageProductData}
+      />
+    );
   });
 
   return (
-    <div className="container p-0 mt-5 mb-5 ">
-      <div
-        className="row row-cols-1 row-cols-lg-4 row-cols-md-2 g-4 cards-container"
-        style={{ flexWrap: "wrap" }}
-      >
-        {products}
-        {products}
-        {products}
-        {products}
-      </div>
+    <div
+      className="container p-4 mt-5 justify-content-evenly "
+      style={{ width: "90%" }}
+    >
+      <div className=" d-flex flex-wrap">{womenProducts}</div>
+      <div className=" d-flex flex-wrap">{womenProducts}</div>
+      <div className=" d-flex flex-wrap">{womenProducts}</div>
+      <div className=" d-flex flex-wrap">{womenProducts}</div>
     </div>
   );
 }
