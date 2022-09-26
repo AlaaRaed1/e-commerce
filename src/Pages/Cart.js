@@ -53,7 +53,10 @@ export default function Cart() {
           <div className="d-flex w-75 justify-content-between pb-5">
             <span className="fs-4 ">
               Total price: <span className="fs-5 fw-bold">$</span>
-              <span className="fs-5 fw-bold">{getCartTotal()}</span>{" "}
+              <span className="fs-5 fw-bold">
+                {getCartTotal() / 2}{" "}
+                <span className=" fs-6">(after discount)</span>
+              </span>
             </span>
             <Button variant="danger" onClick={clearCart}>
               Clear cart
