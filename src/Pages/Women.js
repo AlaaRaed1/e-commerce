@@ -32,13 +32,13 @@ export default function Women() {
 
   return (
     <div
-      className="container p-4 mt-5 justify-content-evenly "
-      style={{ width: "90%" }}
+      className=" d-flex flex-wrap justify-content-between mt-5 "
+      style={{ width: "80%" }}
     >
-      <div className=" d-flex flex-wrap">{womenProducts}</div>
-      <div className=" d-flex flex-wrap">{womenProducts}</div>
-      <div className=" d-flex flex-wrap">{womenProducts}</div>
-      <div className=" d-flex flex-wrap">{womenProducts}</div>
+      {womenProducts}
+      {womenProducts}
+      {womenProducts}
+      {womenProducts}
     </div>
   );
 }

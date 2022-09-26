@@ -6,34 +6,42 @@ export default function WomenClothing({
   getDetailPageProductData,
 }) {
   return (
-    <div className="col">
-      <div
-        className="card shadow-sm p-0 mb-5 bg-white rounded mx-auto"
-        id="card-container"
+    <div
+      className="card shadow-sm p-0 mb-5 bg-white rounded mx-auto"
+      id="card-container"
+    >
+      <Link
+        to={`/product-details`}
+        onClick={() => getDetailPageProductData(item)}
       >
+        <img className="card-img-top" src={item.image} alt="" id="card-img" />
+      </Link>
+
+      <div className="card-body">
         <Link
           to={`/product-details`}
           onClick={() => getDetailPageProductData(item)}
+          className="text-decoration-none"
         >
-          <img className="card-img-top" src={item.image} alt="" id="card-img" />
+          <h6 className="card-title">{item.title}</h6>
         </Link>
 
-        <div className="card-body">
-          <h6 className="card-title">{item.title}</h6>
-          <p className="card-description">{item.description}</p>
-          <p className="product-price">
-            <span className="price-simple">$</span>
-            {item.price}
-          </p>
-          <button
-            className="btn btn-primary"
-            onClick={() => {
-              addToCart(item);
-            }}
+        <p className="card-description">{item.description}</p>
+
+        <p className="product-price ">
+          <Link
+            to={`/product-details`}
+            onClick={() => getDetailPageProductData(item)}
+            className="text-decoration-none text-black fw-bold"
           >
-            Add to cart
-          </button>
-        </div>
+            <span className="price-simple ">$</span>
+            {item.price}
+          </Link>
+        </p>
+
+        <button className="btn btn-primary" onClick={() => addToCart(item)}>
+          Add to cart
+        </button>
       </div>
     </div>
   );

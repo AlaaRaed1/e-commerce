@@ -33,13 +33,13 @@ export default function Men() {
 
   return (
     <div
-      className="container p-4 mt-5 justify-content-evenly"
-      style={{ width: "90%" }}
+      className="d-flex flex-wrap justify-content-between mt-5"
+      style={{ width: "80%" }}
     >
-      <div className=" d-flex flex-wrap">{menProducts}</div>
-      <div className=" d-flex flex-wrap">{menProducts}</div>
-      <div className=" d-flex flex-wrap">{menProducts}</div>
-      <div className=" d-flex flex-wrap">{menProducts}</div>
+      {menProducts}
+      {menProducts}
+      {menProducts}
+      {menProducts}
     </div>
   );
 }
