@@ -5,20 +5,37 @@ import Context from "../Context/Context";
 function Main() {
   const [mainContent, setMainContent] = useState([]);
   const [form, setForm] = useState("4");
-
+  const [sort, setSort] = useState("default");
   const { addToCart, getDetailPageProductData } = useContext(Context);
 
   useEffect(() => {
     fetch(`https://api.escuelajs.co/api/v1/categories/${form}/products`)
       .then((res) => res.json())
       .then((data) => {
-        setMainContent(data);
+        if (sort === "default") {
+          setMainContent(data);
+        } else if (sort === "Low to High") {
+          const sortedArray = data.sort((a, b) => {
+            return a.price - b.price;
+          });
+
+          setMainContent(sortedArray);
+        } else {
+          const sortedArray = data.sort((a, b) => {
+            return b.price - a.price;
+          });
+
+          setMainContent(sortedArray);
+        }
       })
       .catch((err) => console.log(err));
-  }, [form]);
+  }, [form, sort]);
 
-  function handleFormChange(e) {
+  function handleCategoryChange(e) {
     setForm(() => e.target.value);
+  }
+  function handleSortChange(e) {
+    setSort(() => e.target.value);
   }
 
   const products = mainContent.map((item, index) => {
@@ -35,11 +52,11 @@ function Main() {
 
   return (
     <>
-      <form className="d-flex justify-content-center mt-5">
-        <span>
+      <form className="d-flex  mt-5 ">
+        <div>
           <label htmlFor="category">Category: </label>
           <select
-            onChange={handleFormChange}
+            onChange={handleCategoryChange}
             value={form}
             name="form"
             className="ms-2"
@@ -50,7 +67,20 @@ function Main() {
             <option value="4">Shoes</option>
             <option value="5">Others</option>
           </select>
-        </span>
+        </div>
+        <div className=" ms-lg-3">
+          <label htmlFor="sort">Sort: </label>
+          <select
+            onChange={handleSortChange}
+            value={sort}
+            name="sort"
+            className="ms-2"
+          >
+            <option value="default">default</option>
+            <option value="Low to High">Price: Low to High</option>
+            <option value="High to Low">Price: High to Low</option>
+          </select>
+        </div>
       </form>
 
       <div

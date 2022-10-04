@@ -10,7 +10,7 @@ export default function CartComponent({
   return (
     <>
       <div
-        className="border mb-5 bg-white rounded-1 d-flex w-100 h-50 mx-auto align-items-center justify-content-space-between pt-md-4"
+        className="border mb-5 bg-white rounded-1 d-flex w-100 h-50 mx-auto align-items-center justify-content-space-between mt-md-4"
         id="card-container"
       >
         <Link
@@ -22,7 +22,7 @@ export default function CartComponent({
           </div>
         </Link>
 
-        <div className=" w-100  d-flex flex-column align-items-center ">
+        <div className=" w-100 px-3 d-flex flex-column">
           <Link
             to={`/product-details`}
             onClick={() => getDetailPageProductData(item)}
@@ -42,11 +42,17 @@ export default function CartComponent({
             <span className="fs-6 fw-bold">{item.price * item.quantity}</span>
             <span className="opacity-50 fs-6">x{item.quantity}</span>
           </p>
-          <div className="w-75 d-flex justify-content-between align-items-center mb-4 ">
+          <div className="w-100 px-2 d-flex justify-content-between align-items-center mb-4 ">
             <span>
               Quantity: <span className="fw-bold">{item.quantity}</span>
             </span>
-            <Button onClick={() => removeFromCart(item)}>Remove Item</Button>
+            <Button
+              onClick={() => removeFromCart(item)}
+              className="p-2"
+              style={{ fontSize: "var(--step--2)" }}
+            >
+              Remove Item
+            </Button>
           </div>
         </div>
       </div>

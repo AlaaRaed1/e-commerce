@@ -81,6 +81,7 @@ export default function App() {
   }
   function clearCart() {
     localStorage.clear();
+    localStorage.setItem("cart", "[]");
     setCart([]);
   }
 

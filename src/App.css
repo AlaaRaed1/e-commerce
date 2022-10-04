@@ -127,7 +127,7 @@
 }
 
 /* -------------------------
-            Cart
+            Cart Page
 ---------------------------- */
 
 
@@ -148,7 +148,12 @@
     transform: scale(1.1);
 }
 
-
+#cart-description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
 
 /* ----------------
 Detail page 
@@ -196,9 +201,9 @@ Detail page
     height: 3.5em;
     font-size: .7em;
     background: orange;
-    box-shadow: 1px -1px 28px -2px rgba(250, 131, 21, 1);
-    -webkit-box-shadow: 1px -1px 28px -2px rgba(250, 131, 21, 1);
-    -moz-box-shadow: 1px -1px 28px -2px rgba(250, 131, 21, 1);
+    box-shadow: 1px -1px 20px -2px rgba(250, 131, 21, 1);
+    -webkit-box-shadow: 1px -1px 20px -2px rgba(250, 131, 21, 1);
+    -moz-box-shadow: 1px -1px 20px -2px rgba(250, 131, 21, 1);
     color: white;
     transition: all .3s ease;
     display: flex;
@@ -373,6 +378,7 @@ About Page
     -webkit-box-orient: vertical;
     text-decoration: none;
     color: black;
+    justify-self: left;
 }
 
 .card-title:hover {
@@ -469,5 +475,9 @@ About Page
 
     #add-to-cart-button {
         width: 30vw;
+    }
+
+    .card-title {
+        margin-top: .5em;
     }
 }

@@ -51,14 +51,19 @@ export default function Cart() {
         <>
           <Container className="w-75 mt-5">{cartContent}</Container>
           <div className="d-flex w-75 justify-content-between pb-5">
-            <span className="fs-4 ">
-              Total price: <span className="fs-5 fw-bold">$</span>
-              <span className="fs-5 fw-bold">
+            <span className="fs-6 ">
+              Total price: <span className="fs-6 fw-bold">$</span>
+              <span className="fs-6 fw-bold">
                 {getCartTotal() / 2}{" "}
-                <span className=" fs-6">(after discount)</span>
+                <span style={{ fontSize: "8px" }}>(after discount)</span>
               </span>
             </span>
-            <Button variant="danger" onClick={clearCart}>
+            <Button
+              variant="danger"
+              onClick={clearCart}
+              className="p-2"
+              style={{ fontSize: "var(--step--2)" }}
+            >
               Clear cart
             </Button>
           </div>

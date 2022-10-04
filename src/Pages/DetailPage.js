@@ -9,7 +9,8 @@ export default function DetailPage() {
   console.log(detailPageProduct);
   const [count, setCount] = useState(1);
   function handleFormChange(e) {
-    setCount(() => e.target.value);
+    const number = parseInt(e.target.value);
+    setCount(() => number);
   }
   return (
     <div className="product-container align-items-center">
@@ -40,6 +41,11 @@ export default function DetailPage() {
             : detailPageProduct.description}
         </p>
         <div className="price-discount-div ">
+          <p className=" text-black-50 text-decoration-line-through fs-6 m-0">{`$${
+            detailPageProduct === undefined || null
+              ? 125 * count * 2
+              : detailPageProduct.price * count
+          }`}</p>
           <div className="d-flex align-items-center w-25 justify-content-between">
             $
             {detailPageProduct === undefined || null
@@ -47,11 +53,6 @@ export default function DetailPage() {
               : (detailPageProduct.price * count) / 2 + ".00"}
             <div className="discount">50%</div>
           </div>
-          <p className=" text-black-50 text-decoration-line-through fs-6">{`$${
-            detailPageProduct === undefined || null
-              ? 125 * count * 2
-              : detailPageProduct.price * count
-          }`}</p>
         </div>
         <div className=" d-flex w-100  justify-content-between align-items-center rounded text-center mb-2 mt-auto">
           <form className="d-flex justify-content-between  w-25 ">
