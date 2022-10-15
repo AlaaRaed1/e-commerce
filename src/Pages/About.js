@@ -3,7 +3,7 @@ import "font-awesome/css/font-awesome.min.css";
 export default function About() {
   return (
     <div className="mt-5">
-      <div className="container py-5">
+      <div className="container py-5" id="top">
         <div className="row h-100 align-items-center py-5">
           <div className="col-lg-6">
             <h1 className="display-4">About us page</h1>
@@ -32,7 +32,10 @@ export default function About() {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
-              <a href="#" className="btn btn-light px-5 rounded-pill shadow-sm">
+              <a
+                href="#top"
+                className="btn btn-light px-5 rounded-pill shadow-sm"
+              >
                 Learn More
               </a>
             </div>
@@ -59,7 +62,10 @@ export default function About() {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
-              <a href="#" className="btn btn-light px-5 rounded-pill shadow-sm">
+              <a
+                href="#top"
+                className="btn btn-light px-5 rounded-pill shadow-sm"
+              >
                 Learn More
               </a>
             </div>
@@ -93,22 +99,22 @@ export default function About() {
                 </span>
                 <ul className="social mb-0 list-inline mt-3">
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-facebook-f"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-instagram"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-linkedin"></i>
                     </a>
                   </li>
@@ -130,22 +136,22 @@ export default function About() {
                 </span>
                 <ul className="social mb-0 list-inline mt-3">
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-facebook-f"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-instagram"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-linkedin"></i>
                     </a>
                   </li>
@@ -167,22 +173,22 @@ export default function About() {
                 </span>
                 <ul className="social mb-0 list-inline mt-3">
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-facebook-f"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-instagram"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-linkedin"></i>
                     </a>
                   </li>
@@ -204,22 +210,22 @@ export default function About() {
                 </span>
                 <ul className="social mb-0 list-inline mt-3">
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-facebook-f"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-instagram"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#" className="social-link">
+                    <a href="#top" className="social-link">
                       <i className="fa fa-linkedin"></i>
                     </a>
                   </li>
