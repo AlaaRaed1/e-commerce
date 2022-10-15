@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export default function MenClothing({
-  item,
-  addToCart,
-  getDetailPageProductData,
-}) {
+import { addToCart } from "../redux/Reducer";
+import { useDispatch } from "react-redux";
+export default function MenClothing({ item, getDetailPageProductData }) {
+  const dispatch = useDispatch();
   return (
     <div className="col">
       <div
@@ -15,7 +14,14 @@ export default function MenClothing({
           to={`/product-details`}
           onClick={() => getDetailPageProductData(item)}
         >
-          <img className="card-img-top" src={item.image} alt="" id="card-img" />
+          <div className="overflow-hidden">
+            <img
+              className="card-img-top"
+              src={item.image}
+              alt=""
+              id="card-img"
+            />
+          </div>
         </Link>
 
         <div className="card-body">
@@ -40,7 +46,10 @@ export default function MenClothing({
             </Link>
           </p>
 
-          <button className="btn btn-primary" onClick={() => addToCart(item)}>
+          <button
+            className="btn btn-primary"
+            onClick={() => dispatch(addToCart(item))}
+          >
             Add to cart
           </button>
         </div>

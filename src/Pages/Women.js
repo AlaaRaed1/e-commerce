@@ -5,7 +5,7 @@ import Context from "../Context/Context";
 export default function Women() {
   const [womenContent, setWomenContent] = useState([]);
 
-  const { addToCart, getDetailPageProductData } = useContext(Context);
+  const { getDetailPageProductData } = useContext(Context);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/women's clothing`)
@@ -24,7 +24,6 @@ export default function Women() {
       <WomenClothing
         item={item}
         key={index}
-        addToCart={addToCart}
         getDetailPageProductData={getDetailPageProductData}
       />
     );

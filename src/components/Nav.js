@@ -12,10 +12,11 @@ import {
 import emptyCart from "../images/iconCartNav.svg";
 import avatar from "../images/profileAvatar.png";
 import Context from "../Context/Context";
+import { useSelector } from "react-redux";
 export default function Navigation() {
-  const { show, handleShow, handleClose, total } = useContext(Context);
+  const { show, handleShow, handleClose } = useContext(Context);
   const [windowSize, setWindowSize] = useState(getWindowSize());
-
+  const total = useSelector((state) => state.total);
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
@@ -60,10 +61,10 @@ export default function Navigation() {
             </Nav>
           </Container>
           <Container className="d-flex justify-content-end w-25 gap-4">
-            <Link to="/cart" className=" text-decoration-none">
-              <div className=" d-flex ">
+            <Link to="/cart" className="text-decoration-none">
+              <div className="d-flex cart-container">
                 <img src={emptyCart} alt="cart" className="cart" />
-                <div className="itemsInCartQount">{total}</div>
+                <div className="cart-total-items">{total}</div>
               </div>
             </Link>
 
@@ -88,7 +89,7 @@ export default function Navigation() {
                 <Link to="/cart" className=" text-decoration-none">
                   <div className=" d-flex ">
                     <img src={emptyCart} alt="cart" className="cart" />
-                    <div className="itemsInCartQount">{total}</div>
+                    <div className="cart-total-items">{total}</div>
                   </div>
                 </Link>
 

@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function Product({ item, addToCart, getDetailPageProductData }) {
+import { addToCart } from "../redux/Reducer";
+import { useDispatch } from "react-redux";
+function Product({ item, getDetailPageProductData }) {
+  const dispatch = useDispatch();
   return (
     <div className="col">
       <div
@@ -43,7 +46,10 @@ function Product({ item, addToCart, getDetailPageProductData }) {
             </Link>
           </p>
 
-          <button className="btn btn-primary" onClick={() => addToCart(item)}>
+          <button
+            className="btn btn-primary"
+            onClick={() => dispatch(addToCart(item))}
+          >
             Add to cart
           </button>
         </div>

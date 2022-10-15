@@ -3,29 +3,29 @@ import cart from "../images/iconCart.svg";
 import Context from "../Context/Context";
 import shoesImage from "../images/imageProduct.jpg";
 import { Button } from "react-bootstrap";
+import { setQuantity } from "../redux/Reducer";
+import { useDispatch } from "react-redux";
 export default function DetailPage() {
-  const { detailPageProduct, setQuantity } = useContext(Context);
-
-  console.log(detailPageProduct);
+  const { detailPageProduct } = useContext(Context);
+  const dispatch = useDispatch();
   const [count, setCount] = useState(1);
-  function handleFormChange(e) {
+  function handleCountChange(e) {
     const number = parseInt(e.target.value);
-    setCount(() => number);
+    setCount(number);
   }
+
   return (
-    <div className="product-container align-items-center">
-      <div style={{ height: "20em" }}>
-        <img
-          src={
-            detailPageProduct === undefined || null
-              ? shoesImage
-              : detailPageProduct.image || detailPageProduct.images[0]
-          }
-          alt=""
-          className="w-50 rounded-3 h-100"
-          style={{ objectFit: "cover", minWidth: "100%" }}
-        />
-      </div>
+    <div className="product-container align-items-center ">
+      <img
+        src={
+          detailPageProduct === undefined || null
+            ? shoesImage
+            : detailPageProduct.image || detailPageProduct.images[0]
+        }
+        alt=""
+        id="detail-img"
+      />
+
       <div className=" mx-auto d-flex mw-100 align-items-start flex-column m-0 ps-lg-5 px-3">
         <p className=" designer">Sneakers Company</p>
         <div className="title-div">
@@ -35,7 +35,11 @@ export default function DetailPage() {
               : detailPageProduct.title}
           </h2>
         </div>
-        <p className=" text-black-50" style={{ fontSize: "var(--step--2)" }}>
+        <p
+          className=" text-black-50"
+          style={{ fontSize: "var(--step--2)" }}
+          id="cart-description"
+        >
           {detailPageProduct === undefined || null
             ? "These low-profile sneakers are your prefect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer."
             : detailPageProduct.description}
@@ -50,17 +54,17 @@ export default function DetailPage() {
             $
             {detailPageProduct === undefined || null
               ? (125 * count) / 2
-              : (detailPageProduct.price * count) / 2 + ".00"}
+              : Math.floor((detailPageProduct.price * count) / 2) + ".00"}
             <div className="discount">50%</div>
           </div>
         </div>
-        <div className=" d-flex w-100  justify-content-between align-items-center rounded text-center mb-2 mt-auto">
+        <div className="d-flex w-100  justify-content-between align-items-center rounded text-center mb-2 mt-auto">
           <form className="d-flex justify-content-between  w-25 ">
             <label htmlFor="category" className="fw-bold">
               Quantity:
             </label>
             <select
-              onChange={handleFormChange}
+              onChange={handleCountChange}
               value={count}
               name="form"
               className="ms-2"
@@ -89,7 +93,7 @@ export default function DetailPage() {
           </form>
           <Button
             id="add-to-cart-button"
-            onClick={() => setQuantity(detailPageProduct, count)}
+            onClick={() => dispatch(setQuantity(detailPageProduct, count))}
           >
             <div>
               <img src={cart} alt="" style={{ width: "1.5em" }} />

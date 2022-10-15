@@ -84,13 +84,13 @@
 
 }
 
-.itemsInCartQount {
+.cart-total-items {
     background-color: red;
     color: white;
     border-radius: 50%;
     height: 1.35em;
     width: 1.35em;
-    padding: .8em;
+    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,19 +99,19 @@
     flex-direction: column;
     border: none;
     font-weight: 600;
-    margin-left: -10px;
+    margin-left: -14px;
     margin-top: -5px;
 }
 
-.cart {
-    width: 1.3em;
-    align-self: center;
-    cursor: pointer;
+.cart-container:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-out;
 }
 
-.cart:hover {
-    transform: scale(1.3);
-    transition: all 0.3s ease-out;
+.cart {
+    width: 1.5em;
+    align-self: center;
+    cursor: pointer;
 }
 
 .avatar {
@@ -164,6 +164,14 @@ Detail page
     height: 65vh;
     align-self: center;
     width: 70%;
+}
+
+#detail-img {
+    object-fit: cover;
+    min-width: 25vw;
+
+    height: 65%;
+    border-radius: .5em;
 }
 
 .product-info {
@@ -256,53 +264,25 @@ About Page
 ------------------------ */
 
 
-.left-side-bar {
-    border-left: 1px solid hsl(26, 100%, 55%);
-    padding-left: 10px;
-    max-width: 20%;
-    height: fit-content;
-    background: hsl(220, 100%, 99%);
-    position: fixed;
-    right: 80vw;
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    text-decoration: none;
 }
 
+.social-link:hover,
+.social-link:focus {
+    background: #ddd;
 
-
-
-.content {
-    width: 60%;
-}
-
-.about-title {
-    margin-bottom: 1em;
-}
-
-.about-content {
-    font-size: calc(var(--step--2) + .1em);
-    opacity: .7;
-    font-weight: 600;
-    background: hsl(227, 100%, 96%);
-    padding: 1em;
-    max-width: 80%;
-    border-bottom-left-radius: 30px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-}
-
-
-
-.right-side-bar {
-    max-width: 20%;
-    height: fit-content;
-    padding-right: 10px;
-    border-right: 1px solid hsl(26, 100%, 55%);
-    background: hsl(220, 100%, 99%);
-    position: fixed;
-    left: 80vw;
-}
-
-#top-right {
-    border: none;
+    color: #555;
 }
 
 
@@ -352,10 +332,6 @@ About Page
     width: 1em;
     cursor: pointer;
 }
-
-
-
-
 
 .cards-container {
     display: flex;
@@ -452,6 +428,12 @@ About Page
         width: 100%;
     }
 
+    #detail-img {
+        min-width: 100vw;
+        border-radius: 0;
+        height: 30vh;
+
+    }
 
 }
 
@@ -480,4 +462,6 @@ About Page
     .card-title {
         margin-top: .5em;
     }
+
+
 }

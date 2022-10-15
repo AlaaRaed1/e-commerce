@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-
-export default function CartComponent({
-  item,
-  getDetailPageProductData,
-  removeFromCart,
-}) {
+import { removeFromCart } from "../redux/Reducer";
+import { useDispatch } from "react-redux";
+export default function CartComponent({ item, getDetailPageProductData }) {
+  const dispatch = useDispatch();
   return (
     <>
       <div
@@ -39,7 +37,9 @@ export default function CartComponent({
           <p className="product-price">
             <span className="fs-5 ">Price:</span>{" "}
             <span className="price-simple">$</span>
-            <span className="fs-6 fw-bold">{item.price * item.quantity}</span>
+            <span className="fs-6 fw-bold">
+              {Math.floor(item.price * item.quantity)}
+            </span>
             <span className="opacity-50 fs-6">x{item.quantity}</span>
           </p>
           <div className="w-100 px-2 d-flex justify-content-between align-items-center mb-4 ">
@@ -47,7 +47,7 @@ export default function CartComponent({
               Quantity: <span className="fw-bold">{item.quantity}</span>
             </span>
             <Button
-              onClick={() => removeFromCart(item)}
+              onClick={() => dispatch(removeFromCart(item))}
               className="p-2"
               style={{ fontSize: "var(--step--2)" }}
             >

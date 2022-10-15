@@ -3,15 +3,15 @@ import Product from "../components/Product";
 
 import Context from "../Context/Context";
 export default function Collection() {
-  const [collectionsContent, setcollectionsContent] = useState([]);
+  const [collectionsContent, setCollectionsContent] = useState([]);
   const context = useContext(Context);
-  const { addToCart, getDetailPageProductData } = context;
+  const { getDetailPageProductData } = context;
 
   useEffect(() => {
     fetch("https://api.escuelajs.co/api/v1/products")
       .then((res) => res.json())
       .then((data) => {
-        setcollectionsContent(data);
+        setCollectionsContent(data);
         if (!localStorage.getItem("cart")) {
           localStorage.setItem("cart", "[]");
         }
@@ -24,7 +24,6 @@ export default function Collection() {
       <Product
         item={item}
         key={index}
-        addToCart={addToCart}
         getDetailPageProductData={getDetailPageProductData}
       />
     );

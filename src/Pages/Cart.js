@@ -1,17 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import CartComponent from "../components/CartComponent";
 import Container from "react-bootstrap/Container";
 import Context from "../Context/Context";
 import { Button } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { clearCart } from "../redux/Reducer";
 export default function Cart() {
-  const { getDetailPageProductData, cart, setCart, clearCart, removeFromCart } =
-    useContext(Context);
-
-  useEffect(() => {
-    const storage = JSON.parse(localStorage.getItem("cart"));
-    setCart(storage);
-  }, [setCart]);
-
+  const { getDetailPageProductData } = useContext(Context);
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   const cartContent =
     cart === null || undefined
       ? ""
@@ -21,7 +18,6 @@ export default function Cart() {
               item={item}
               key={i}
               getDetailPageProductData={getDetailPageProductData}
-              removeFromCart={removeFromCart}
             />
           );
         });
@@ -60,7 +56,7 @@ export default function Cart() {
             </span>
             <Button
               variant="danger"
-              onClick={clearCart}
+              onClick={() => dispatch(clearCart([]))}
               className="p-2"
               style={{ fontSize: "var(--step--2)" }}
             >

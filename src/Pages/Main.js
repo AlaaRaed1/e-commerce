@@ -6,7 +6,7 @@ function Main() {
   const [mainContent, setMainContent] = useState([]);
   const [form, setForm] = useState("4");
   const [sort, setSort] = useState("default");
-  const { addToCart, getDetailPageProductData } = useContext(Context);
+  const { getDetailPageProductData } = useContext(Context);
 
   useEffect(() => {
     fetch(`https://api.escuelajs.co/api/v1/categories/${form}/products`)
@@ -44,7 +44,6 @@ function Main() {
         item={item}
         key={index}
         id={item.id}
-        addToCart={addToCart}
         getDetailPageProductData={getDetailPageProductData}
       />
     );
@@ -54,7 +53,9 @@ function Main() {
     <>
       <form className="d-flex  mt-5 ">
         <div>
-          <label htmlFor="category">Category: </label>
+          <label htmlFor="category">
+            <b>Category: </b>
+          </label>
           <select
             onChange={handleCategoryChange}
             value={form}
@@ -69,7 +70,9 @@ function Main() {
           </select>
         </div>
         <div className=" ms-lg-3">
-          <label htmlFor="sort">Sort: </label>
+          <label htmlFor="sort">
+            <b>Sort: </b>
+          </label>
           <select
             onChange={handleSortChange}
             value={sort}
