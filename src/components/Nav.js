@@ -4,7 +4,7 @@ import menuIcon from "../images/iconMenu.svg";
 import {
   Nav,
   Navbar,
-  NavLink,
+  Row,
   Offcanvas,
   NavbarBrand,
   Container,
@@ -38,26 +38,35 @@ export default function Navigation() {
     <>
       {windowSize > 720 ? (
         <Navbar className="w-75 border-bottom pb-0">
-          <Container className=" gap-4">
-            <Navbar.Brand href="/" className="fw-bold fs-3">
-              Sneakers
+          <Container className="gap-4">
+            <Navbar.Brand className="fw-bold fs-3">
+              <Link
+                to="/"
+                style={{
+                  color: "black",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                Sneakers
+              </Link>
             </Navbar.Brand>
             <Nav className="me-auto " style={{ height: "5em" }}>
-              <Nav.Link href="/collections" id="link">
+              <Link to="/collections" id="link">
                 Collections
-              </Nav.Link>
-              <Nav.Link href="/men" id="link">
+              </Link>
+              <Link to="/men" id="link">
                 Men
-              </Nav.Link>
-              <Nav.Link href="/women" id="link">
+              </Link>
+              <Link to="/women" id="link">
                 Women
-              </Nav.Link>
-              <Nav.Link href="/about" id="link">
+              </Link>
+              <Link to="/about" id="link">
                 About
-              </Nav.Link>
-              <Nav.Link href="/contact" id="link">
+              </Link>
+              <Link to="/contact" id="link">
                 Contact
-              </Nav.Link>
+              </Link>
             </Nav>
           </Container>
           <Container className="d-flex justify-content-end w-25 gap-4">
@@ -80,9 +89,16 @@ export default function Navigation() {
                   <img src={menuIcon} onClick={handleShow} alt="" />
                 </NavbarBrand>
                 <Navbar.Brand>
-                  <NavLink as={Link} to="/">
+                  <Link
+                    to="/"
+                    style={{
+                      color: "black",
+                      textDecoration: "none",
+                      fontWeight: "bold",
+                    }}
+                  >
                     <span className="mobile-nav-title">Sneakers</span>
-                  </NavLink>
+                  </Link>
                 </Navbar.Brand>
               </div>
               <div className="mobile-cart-avatar-container">
@@ -101,52 +117,70 @@ export default function Navigation() {
           <Offcanvas show={show} onHide={handleClose}>
             <Offcanvas.Header closeButton className="border-bottom ">
               <Offcanvas.Title>
-                <NavLink as={Link} to="/">
+                <Link
+                  to="/"
+                  style={{
+                    color: "black",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                  }}
+                  onClick={handleClose}
+                >
                   <span className="mobile-nav-title">Sneakers</span>
-                </NavLink>
+                </Link>
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <NavLink
-                as={Link}
-                to="/collections"
-                onClick={handleShow}
-                className="border-bottom border-opacity-25 link p-2 "
-              >
-                collections
-              </NavLink>
-              <NavLink
-                as={Link}
-                to="/men"
-                onClick={handleShow}
-                className="border-bottom border-opacity-25 link p-2"
-              >
-                Men
-              </NavLink>
-              <NavLink
-                as={Link}
-                to="/women"
-                onClick={handleShow}
-                className="border-bottom border-opacity-25 link p-2"
-              >
-                Women
-              </NavLink>
-              <NavLink
-                as={Link}
-                to="/about"
-                onClick={handleShow}
-                className="border-bottom border-opacity-25 link p-2"
-              >
-                About
-              </NavLink>
-              <NavLink
-                as={Link}
-                to="/contact"
-                onClick={handleShow}
-                className="border-bottom border-opacity-25 link p-2"
-              >
-                contact
-              </NavLink>
+              <Container>
+                <Row>
+                  <Link
+                    to="/collections"
+                    className="border-bottom border-opacity-25 link p-2 text-black opacity-75 text-decoration-none"
+                    onClick={handleClose}
+                  >
+                    collections
+                  </Link>
+                </Row>
+                <Row>
+                  <Link
+                    to="men"
+                    className="border-bottom border-opacity-25 link p-2 text-black opacity-75 text-decoration-none"
+                    onClick={handleClose}
+                  >
+                    Men
+                  </Link>
+                </Row>
+
+                <Row>
+                  <Link
+                    to="women"
+                    className="border-bottom border-opacity-25 link p-2 text-black opacity-75 text-decoration-none"
+                    onClick={handleClose}
+                  >
+                    Women
+                  </Link>
+                </Row>
+
+                <Row>
+                  <Link
+                    to="about"
+                    className="border-bottom border-opacity-25 link p-2 text-black opacity-75 text-decoration-none"
+                    onClick={handleClose}
+                  >
+                    About
+                  </Link>
+                </Row>
+
+                <Row>
+                  <Link
+                    to="contact"
+                    className="border-bottom border-opacity-25 link p-2 text-black opacity-75 text-decoration-none"
+                    onClick={handleClose}
+                  >
+                    contact
+                  </Link>
+                </Row>
+              </Container>
             </Offcanvas.Body>
           </Offcanvas>
         </>

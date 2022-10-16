@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Product from "../components/Product";
 import Context from "../Context/Context";
-
+import { Container, Row } from "react-bootstrap";
 function Main() {
   const [mainContent, setMainContent] = useState([]);
   const [form, setForm] = useState("4");
@@ -29,6 +29,8 @@ function Main() {
         }
       })
       .catch((err) => console.log(err));
+
+    localStorage.setItem("product", "null");
   }, [form, sort]);
 
   function handleCategoryChange(e) {
@@ -51,7 +53,7 @@ function Main() {
 
   return (
     <>
-      <form className="d-flex  mt-5 ">
+      <form className="d-flex mt-5 ">
         <div>
           <label htmlFor="category">
             <b>Category: </b>
@@ -86,12 +88,11 @@ function Main() {
         </div>
       </form>
 
-      <div
-        className="container p-4 mt-5 justify-content-evenly "
-        style={{ width: "90%" }}
-      >
-        <div className="d-flex flex-wrap">{products}</div>
-      </div>
+      <Container className="mt-5 mx-auto" style={{ width: "90%" }}>
+        <Container fluid>
+          <Row>{products}</Row>
+        </Container>
+      </Container>
     </>
   );
 }

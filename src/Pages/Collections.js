@@ -16,7 +16,9 @@ export default function Collection() {
           localStorage.setItem("cart", "[]");
         }
       })
+
       .catch((err) => console.log(err));
+    localStorage.setItem("product", "null");
   }, []);
 
   const CollectionsProducts = collectionsContent.map((item, index) => {

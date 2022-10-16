@@ -1,6 +1,9 @@
-import React from "react";
+import { useEffect } from "react";
 import avatar from "../images/imgAvatar.png";
 export default function Contact() {
+  useEffect(() => {
+    localStorage.setItem("product", "null");
+  });
   return (
     <div>
       <div
@@ -15,7 +18,7 @@ export default function Contact() {
         <p>Please fill your info and send us what is on your mind.</p>
         <form className="form d-flex flex-column gap-2">
           <div>
-            <label forHtml="name">Name: </label>
+            <label forhtml="name">Name: </label>
             <input
               type="name"
               placeholder="Your name"
@@ -24,7 +27,7 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label forHtml="email">Email: </label>
+            <label forhtml="email">Email: </label>
             <input
               type="email"
               placeholder="@example.com"
@@ -33,7 +36,7 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label forHtml="message">Message:</label>
+            <label forhtml="message">Message:</label>
             <textarea
               placeholder="message"
               name="message"

@@ -19,12 +19,10 @@ export default function App() {
     }
   }, []);
 
-  const [detailPageProduct, setDetailPageProduct] = useState();
-
   const [show, setShow] = useState(false);
 
   function getDetailPageProductData(product) {
-    setDetailPageProduct(product);
+    localStorage.setItem("product", JSON.stringify(product));
   }
 
   const handleClose = () => setShow(false);
@@ -35,7 +33,7 @@ export default function App() {
       <Provider
         value={{
           getDetailPageProductData,
-          detailPageProduct,
+
           show,
           handleShow,
           handleClose,

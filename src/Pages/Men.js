@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
 import MenClothing from "../components/MenClothing";
 import Context from "../Context/Context";
+import { Container, Row } from "react-bootstrap";
 export default function Men() {
   const [menContent, setMenContent] = useState([]);
-
   const { getDetailPageProductData } = useContext(Context);
 
   useEffect(() => {
@@ -17,6 +17,7 @@ export default function Men() {
       })
 
       .catch((err) => console.log(err));
+    localStorage.setItem("product", "null");
   }, []);
 
   const menProducts = menContent.map((item, index) => {
@@ -30,14 +31,18 @@ export default function Men() {
   });
 
   return (
-    <div
-      className="d-flex flex-wrap justify-content-between mt-5"
-      style={{ width: "80%" }}
-    >
-      {menProducts}
-      {menProducts}
-      {menProducts}
-      {menProducts}
-    </div>
+    <Container className="mt-5 mx-auto" style={{ width: "90%" }}>
+      <Container fluid>
+        <Row>
+          {menProducts}
+
+          {menProducts}
+
+          {menProducts}
+
+          {menProducts}
+        </Row>
+      </Container>
+    </Container>
   );
 }

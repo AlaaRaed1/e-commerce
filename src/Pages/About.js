@@ -1,6 +1,9 @@
 import "font-awesome/css/font-awesome.min.css";
-
+import { useEffect } from "react";
 export default function About() {
+  useEffect(() => {
+    localStorage.setItem("product", "null");
+  });
   return (
     <div className="mt-5">
       <div className="container py-5" id="top">

@@ -1,60 +1,45 @@
-import { useState, useContext } from "react";
+import { useState, useEffect } from "react";
 import cart from "../images/iconCart.svg";
-import Context from "../Context/Context";
-import shoesImage from "../images/imageProduct.jpg";
 import { Button } from "react-bootstrap";
 import { setQuantity } from "../redux/Reducer";
 import { useDispatch } from "react-redux";
 export default function DetailPage() {
-  const { detailPageProduct } = useContext(Context);
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
+  const [product, setProduct] = useState(
+    JSON.parse(localStorage.getItem("product"))
+  );
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem("product"));
+    setProduct(item);
+  }, []);
   function handleCountChange(e) {
     const number = parseInt(e.target.value);
     setCount(number);
   }
 
   return (
-    <div className="product-container align-items-center ">
-      <img
-        src={
-          detailPageProduct === undefined || null
-            ? shoesImage
-            : detailPageProduct.image || detailPageProduct.images[0]
-        }
-        alt=""
-        id="detail-img"
-      />
+    <div className="product-container">
+      <img src={product.image || product.images[0]} alt="" id="detail-img" />
 
       <div className=" mx-auto d-flex mw-100 align-items-start flex-column m-0 ps-lg-5 px-3">
         <p className=" designer">Sneakers Company</p>
         <div className="title-div">
-          <h2 className=" fw-bold">
-            {detailPageProduct === undefined || null
-              ? "Fall Limited Edition Sneakers"
-              : detailPageProduct.title}
-          </h2>
+          <h2 className=" fw-bold">{product.title}</h2>
         </div>
         <p
           className=" text-black-50"
           style={{ fontSize: "var(--step--2)" }}
           id="cart-description"
         >
-          {detailPageProduct === undefined || null
-            ? "These low-profile sneakers are your prefect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer."
-            : detailPageProduct.description}
+          {product.description}
         </p>
         <div className="price-discount-div ">
           <p className=" text-black-50 text-decoration-line-through fs-6 m-0">{`$${
-            detailPageProduct === undefined || null
-              ? 125 * count * 2
-              : detailPageProduct.price * count
+            product.price * count
           }`}</p>
           <div className="d-flex align-items-center w-25 justify-content-between">
-            $
-            {detailPageProduct === undefined || null
-              ? (125 * count) / 2
-              : Math.floor((detailPageProduct.price * count) / 2) + ".00"}
+            ${Math.floor((product.price * count) / 2) + ".00"}
             <div className="discount">50%</div>
           </div>
         </div>
@@ -93,7 +78,7 @@ export default function DetailPage() {
           </form>
           <Button
             id="add-to-cart-button"
-            onClick={() => dispatch(setQuantity(detailPageProduct, count))}
+            onClick={() => dispatch(setQuantity(product, count))}
           >
             <div>
               <img src={cart} alt="" style={{ width: "1.5em" }} />
