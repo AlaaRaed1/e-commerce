@@ -1,6 +1,6 @@
 function getTotal() {
   const cart = JSON.parse(localStorage.getItem("cart"));
-  const total = cart.map((item) => item.quantity).reduce((a, b) => a + b, 0);
+  const total = cart === undefined ? 0 : cart.map((item) => item.quantity).reduce((a, b) => a + b, 0);
   return total;
 }
 
