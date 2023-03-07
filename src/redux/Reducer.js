@@ -1,5 +1,5 @@
 function getTotal() {
-  const cart = JSON.parse(localStorage.getItem("cart")) === undefined ? [] :  JSON.parse(localStorage.getItem("cart"));
+  const cart = JSON.parse(localStorage.getItem("cart")) === null ? [] :  JSON.parse(localStorage.getItem("cart"));
   const total =  cart.map((item) => item.quantity).reduce((a, b) => a + b, 0);
   return total;
 }
